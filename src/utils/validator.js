@@ -37,3 +37,20 @@ export const checkUpdate = (data, userId) => {
         return false;
     }
 }
+
+export const checkPetUpdate = (data, petId)=>{
+    if(petId){
+        if(
+            Object.entries(data).length === 0||
+            data.name == '' ||
+            data.name,
+            data.typeOfAnimal == '' ||
+            data.typeOfAnimal,
+            data.breed == '' ||
+            data.breed
+        )return false;
+        return true;
+    }else{
+        return false;
+    }
+}

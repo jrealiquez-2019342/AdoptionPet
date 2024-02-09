@@ -9,6 +9,8 @@ import helmet from 'helmet';
 import cors from 'cors';
 import { config } from 'dotenv';
 import userRoutes from './../src/user/user.routes.js';
+import keeperRoutes from './../src/keeper/keeper.routes.js';
+import petRoutes from './../src/pet/pet.routes.js';
 
 //configuracion
 const app = express();
@@ -24,7 +26,7 @@ app.use(morgan('dev'))//logs de solicitudes al servidor
 
 
 //Declaracion de rutas
-app.use(userRoutes);
+app.use(userRoutes, keeperRoutes, petRoutes);
 
 export const initServer = ()=>{
     app.listen(port);

@@ -13,7 +13,6 @@ export const register = async(req, res)=>{
     try{
         //Capturar el formulario
         let data = req.body;
-        console.log(data);
         //Encriptar la contrasenia
         data.password = await encrypt(data.password);
         //Asignar rol por defecto

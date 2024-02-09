@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
+const {Schema} = mongoose;
 
 const petSchema = mongoose.Schema({
     keeperId:{
-        type: ObjectId,
+        type: Schema.Types.ObjectId,
         required: true
     },
     name:{
@@ -10,7 +11,10 @@ const petSchema = mongoose.Schema({
         required: true
     },
     typeOfAnimal:{
-        enum:['AVE', 'ANFIBIO', 'MAMÍFERO', 'REPTIL', 'PEZ']
+        type: String,
+        uppercase: true,
+        enum:['AVE', 'ANFIBIO', 'MAMÍFERO', 'REPTIL', 'PEZ'],
+        required: true
     },
     breed:{
         type: String,
